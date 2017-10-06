@@ -2,20 +2,56 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-class App extends Component {
+class App extends React.Component {
   render() {
+
+    console.log(this.props);
+
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+      <main>
+        <header>
+          <h1>{this.props.title}</h1>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+        <section className="todo-list">
+          <div className="todo">
+
+            <button className="checkbox item">
+              <i className="material-icons">check_box_outline_blank</i>
+            </button>
+
+            <span className="todo-title">Изучать Реакт</span>
+
+            <button className="delete icon">
+              <i className="material-icons">delete</i>
+            </button>
+
+          </div>
+
+          <div className="todo completed">
+
+            <button className="checkbox item">
+              <i className="material-icons">check_box</i>
+            </button>
+
+            <span className="todo-title">Изучать JavaScript</span>
+
+            <button className="delete icon">
+              <i className="material-icons">delete</i>
+            </button>
+
+          </div>
+
+        </section>
+      </main>
     );
   }
 }
+
+// App.propTypes = {
+//   title: React.PropTypes.string
+// };
+App.defaultProps = {
+  title: 'React ToDo'
+};
 
 export default App;
