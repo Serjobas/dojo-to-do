@@ -6,11 +6,11 @@ import Button from './Button';
 class Todo extends React.Component {
   render(){
     return (
-      <div className={'todo ' + (this.props.isCompleted ? 'completed' : '')}>
+      <div className={`todo ${(this.props.isCompleted ? 'completed' : '')}`}>
 
         <Checkbox checked={this.props.isCompleted} />
 
-        <span className="todo-title">{this.props.task}</span>
+        <span className="todo-title">{this.props.title}</span>
 
         <Button className="delete icon" icon="delete"/>
 

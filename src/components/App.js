@@ -13,10 +13,9 @@ class App extends React.Component {
       <main>
         <Header title="React to- fucking-do" />
         <section className="todo-list">
-          <Todo isCompleted={true} task="Изучать React.js" />
-          <Todo task="Изучать что-то" />
-          <Todo task="Изучать JavaScript" />
-          <Todo isCompleted={true} task="Стать крутым"/>
+          {this.props.todos.map( todo =>
+            <Todo key={todo.id} isCompleted={todo.completed} title={todo.title} />
+           )}
         </section>
       </main>
     );
