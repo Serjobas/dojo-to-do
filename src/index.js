@@ -7,5 +7,5 @@ import registerServiceWorker from './registerServiceWorker';
 import todos from './components/todos';
 
 
-ReactDOM.render(<App todos={todos}/>, document.getElementById('root'));
+ReactDOM.render(<App initData={todos}/>, document.getElementById('root'));
 registerServiceWorker();
